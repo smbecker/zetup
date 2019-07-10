@@ -4,7 +4,7 @@ for i in ~/zetup/dotfiles/*;
  do
    bn=$(basename $i) ;
    if [[ ! "$bn" = _* ]] ;
-     then ln -s "$i" "$HOME/.${bn%%.*}";
+     then ln -sf "$i" "$HOME/.${bn%%.*}";
    fi
 done
 

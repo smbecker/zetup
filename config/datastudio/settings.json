@@ -1,0 +1,23 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "workbench.enablePreviewFeatures": true,
+  "editor.insertSpaces": false,
+  "editor.renderWhitespace": "all",
+  "editor.minimap.enabled":false,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2000,
+  "files.trimTrailingWhitespace": false,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Default Dark Azure Data Studio",
+  "workbench.iconTheme": "vs-seti",
+  "git.path": "C:\\Users\\Shaun\\AppData\\Local\\GitHub\\PortableGit_69bd5e6f85e4842f07db71c9618a621154c52254\\cmd\\git.exe",
+  "gitlens.advanced.git": "C:\\Users\\Shaun\\AppData\\Local\\GitHub\\PortableGit_69bd5e6f85e4842f07db71c9618a621154c52254\\cmd\\git.exe",
+  "workbench.startupEditor": "newUntitledFile",
+  "telemetry.enableTelemetry": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "git.enableSmartCommit": true,
+  "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+  "editor.fontFamily": "Source Code Pro Semibold",
+  "editor.fontSize": 18
+}

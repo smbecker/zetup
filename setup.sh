@@ -1,22 +1,30 @@
-#!/usr/local/bin bash
-
+#!/bin/bash
 
 echo "Linking dotfiles"
-sh ./link-dotfiles.sh
+./link-dotfiles.sh
 
 echo "Installing programs"
-sh ./install/*.sh
+for f in ./install/*.sh; do
+  . $f
+done
 
-echo "Installing fonts"
-sh ./fonts.sh
+if [[ -z $IN_CONTAINER || ! $IN_CONTAINER ]]; then
+  echo "Installing desktop programs"
+  for f in ./desktop/*.sh; do
+    . $f
+  done
 
+  echo "Installing fonts"
+  ./fonts.sh
+
+  echo "Customizing UI"
+  ./ui/unity.sh
+fi
 
 source ~/.bashrc
 
 if [ -f $HOME/zetup/custom/setup.sh ];
-then sh $HOME/zetup/custom/setup.sh;
+then . $HOME/zetup/custom/setup.sh;
 fi
 
 echo 'All Done!'
-
-echo "Customize the ui with `sh ~/zetup/ui/xfce.sh` or `sh ~/zetup/ui/unity.sh` depending on your desktop environment"

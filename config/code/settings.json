@@ -1,0 +1,31 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.insertSpaces": false,
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled":false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000,
+    "files.trimTrailingWhitespace": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/bin": true,
+        "**/obj": false,
+        "**/*.lock.json": true,
+        "**/*.deps.json": true,
+        "**/*.rsp": true,
+        "**/*.xproj": true,
+        "**/*.sln": true
+    },
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-seti",
+    "files.associations": {"*.cssql": "razor"},
+    "telemetry.enableTelemetry": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "git.enableSmartCommit": true,
+    "python.jediEnabled": false,
+    "editor.fontFamily": "Source Code Pro Semibold",
+    "editor.fontSize": 18
+}
