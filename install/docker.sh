@@ -15,11 +15,11 @@ sudo ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 
 
-base=https://github.com/docker/machine/releases/download/v0.16.1 &&
+base=https://github.com/docker/machine/releases/download/v0.16.2 &&
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
   sudo install /tmp/docker-machine /usr/local/bin/docker-machine
 
-base=https://raw.githubusercontent.com/docker/machine/v0.16.1
+base=https://raw.githubusercontent.com/docker/machine/v0.16.2
 for i in docker-machine-prompt.bash docker-machine-wrapper.bash docker-machine.bash
 do
   sudo wget "$base/contrib/completion/bash/${i}" -P /etc/bash_completion.d
@@ -31,7 +31,7 @@ sudo usermod -aG docker $USER
 sudo service docker start
 
 # pull some commonly used images
-for i in postgres mysql "Microsoft/mssql-server-linux" "microsoft/dotnet:2.2-runtime-deps-alpine";
+for i in postgres mysql "Microsoft/mssql-server-linux" "mcr.microsoft.com/dotnet/core/runtime-deps:3.0-alpine";
 do
     docker pull $i
 done
