@@ -9,13 +9,14 @@ upgrade_all()
 
 prune_branches()
 {
+  git remote prune origin
   git fetch
-  for branch in $(git for-each-ref --format '%(refname:short)');
+  for branch in $(git for-each-ref --format '%(refname:short)' refs/heads);
   do
     log=$(git branch --list $branch -vv)
     if [[ $log == *"gone"* ]];
     then
-      echo -e $branch;
+      git branch -D $branch
     fi
   done
 }
