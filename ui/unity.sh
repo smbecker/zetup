@@ -39,25 +39,77 @@ nohup plank &>/dev/null &
 mkdir -p $HOME/.config/autostart
 cp /usr/share/applications/plank.desktop $HOME/.config/autostart/
 
+sudo apt install -y uuid
+
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed "false"
 
-# Setup terminal
-profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
-profile=${profile:1:-1} # remove leading and trailing single quotes
-terminalSetting="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/"
-gsettings set $terminalSetting default-size-columns 120
-gsettings set $terminalSetting default-size-rows 25
-gsettings set $terminalSetting use-system-font "false"
-gsettings set $terminalSetting font "Meslo LG S for Powerline 13"
-dconf write /org/gnome/terminal/legacy/theme-variant "'dark'"
-dconf write /org/gnome/terminal/legacy/new-terminal-mode "'tab'"
+getDefaultTerminal()
+{
+  profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
+  profile=${profile:1:-1} # remove leading and trailing single quotes
+  echo $profile
+}
 
-gsettings set $terminalSetting visible-name "Personal"
-gsettings set $terminalSetting background-color "#073642"
-gsettings set $terminalSetting foreground-color "#FDF6E3"
-gsettings set $terminalSetting bold-color "#FDF6E3"
-gsettings set $terminalSetting bold-color-same-as-fg "true"
-gsettings set $terminalSetting use-theme-colors "false"
-gsettings set $terminalSetting use-theme-background "false"
-gsettings set $terminalSetting allow-bold "true"
-gsettings set $terminalSetting palette "['#6A6A78787A7A', '#E9E965653B3B', '#3939E9E9A8A8', '#E5E5B6B68484', '#4444AAAAE6E6', '#E1E175759999', '#3D3DD5D5E7E7', '#C3C3DDDDE1E1', '#595984848989', '#E6E650502929', '#0000FFFF9A9A', '#E8E894944040', '#00009A9AFBFB', '#FFFF57578F8F', '#5F5FFFFFFFFF', '#D9D9FBFBFFFF']"
+getTerminalSetting()
+{
+  terminalSetting="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$1/"
+  echo $terminalSetting
+}
+
+themeTerminal()
+{
+  # Setup terminal
+  terminalSetting=$(getTerminalSetting $1)
+  gsettings set $terminalSetting default-size-columns 120
+  gsettings set $terminalSetting default-size-rows 25
+  gsettings set $terminalSetting use-system-font "false"
+  gsettings set $terminalSetting font "Meslo LG S for Powerline 13"
+  dconf write /org/gnome/terminal/legacy/theme-variant "'dark'"
+  dconf write /org/gnome/terminal/legacy/new-terminal-mode "'tab'"
+
+  gsettings set $terminalSetting visible-name $2
+  gsettings set $terminalSetting background-color "#073642"
+  gsettings set $terminalSetting foreground-color "#FDF6E3"
+  gsettings set $terminalSetting bold-color "#FDF6E3"
+  gsettings set $terminalSetting bold-color-same-as-fg "true"
+  gsettings set $terminalSetting use-theme-colors "false"
+  gsettings set $terminalSetting use-theme-background "false"
+  gsettings set $terminalSetting allow-bold "true"
+  gsettings set $terminalSetting palette "['#6A6A78787A7A', '#E9E965653B3B', '#3939E9E9A8A8', '#E5E5B6B68484', '#4444AAAAE6E6', '#E1E175759999', '#3D3DD5D5E7E7', '#C3C3DDDDE1E1', '#595984848989', '#E6E650502929', '#0000FFFF9A9A', '#E8E894944040', '#00009A9AFBFB', '#FFFF57578F8F', '#5F5FFFFFFFFF', '#D9D9FBFBFFFF']"
+}
+
+copyTerminal()
+{
+  newProfileId=$(uuid)
+  quotedProfileId="'$newProfileId'"
+  allProfiles=$(gsettings get org.gnome.Terminal.ProfilesList list)
+  allProfiles="${allProfiles/]/, $quotedProfileId]}"
+
+  sourceTerminal=$(getTerminalSetting $1)
+  destinationTerminal=$(getTerminalSetting $newProfileId)
+
+  for i in $(gsettings list-keys $sourceTerminal);
+  do
+    value=$(gsettings get $sourceTerminal $i)
+    gsettings set $destinationTerminal $i "$value"
+  done
+
+  gsettings set $destinationTerminal visible-name "'$2'"
+  gsettings set org.gnome.Terminal.ProfilesList list "$allProfiles"
+
+  echo $newProfileId
+}
+
+defaultProfile=$(getDefaultTerminal)
+themeTerminal $defaultProfile 'Default'
+
+# Initialize Conda terminal profile
+condaProfile=$(copyTerminal $defaultProfile 'Conda')
+condaSetting=$(getTerminalSetting $condaProfile)
+gsettings set $condaSetting use-custom-command true
+gsettings set $condaSetting custom-command "'bash --rcfile ~/.conda_bashrc'"
+
+if [ -f $HOME/zetup/config/.conda_bashrc ];
+then cp $HOME/zetup/config/.conda_bashrc ~/.conda_bashrc;
+fi
+
