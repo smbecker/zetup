@@ -108,8 +108,3 @@ condaProfile=$(copyTerminal $defaultProfile 'Conda')
 condaSetting=$(getTerminalSetting $condaProfile)
 gsettings set $condaSetting use-custom-command true
 gsettings set $condaSetting custom-command "'bash --rcfile ~/.conda_bashrc'"
-
-if [ -f $HOME/zetup/config/.conda_bashrc ];
-then cp $HOME/zetup/config/.conda_bashrc ~/.conda_bashrc;
-fi
-

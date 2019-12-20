@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apt-get install mssql-tools unixodbc-dev
+sudo apt-get install -y mssql-tools unixodbc-dev
