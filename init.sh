@@ -20,8 +20,8 @@ fi
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 
-sudo apt-get update
-sudo apt-get -y install git cmake apt-transport-https curl ca-certificates software-properties-common snapd
+sudo apt update
+sudo apt install -y git cmake apt-transport-https curl ca-certificates software-properties-common snapd
 
 git config --global user.name "$name"
 git config --global user.email "$email"
@@ -39,7 +39,7 @@ if [[ ! -z $IN_CONTAINER && $IN_CONTAINER ]]; then
   cat ~/.ssh/id_rsa.pub
   echo https://github.com/settings/ssh/new
 else
-  sudo apt-get -y install google-chrome-stable xclip
+  sudo apt install -y google-chrome-stable xclip
   xdg-settings set default-web-browser google-chrome.desktop
 
   echo "Your github key has been copied to your clipboard. Paste it into your account in the new browser window. Please create an account if you don't already have one."

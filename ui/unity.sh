@@ -33,7 +33,7 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font "Garuda Bole 12"
 gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
 
 # Setup plank
-sudo apt-get install -y plank
+sudo apt install -y plank
 nohup plank &>/dev/null &
 
 mkdir -p $HOME/.config/autostart
@@ -101,7 +101,13 @@ copyTerminal()
 }
 
 defaultProfile=$(getDefaultTerminal)
-themeTerminal $defaultProfile 'Default'
+themeTerminal $defaultProfile 'Bash'
+
+# Initialize PowerShell terminal profile
+pwshProfile=$(copyTerminal $defaultProfile 'PowerShell')
+pwshSetting=$(getTerminalSetting $pwshProfile)
+gsettings set $pwshSetting use-custom-command true
+gsettings set $pwshSetting custom-command "'pwsh'"
 
 # Initialize Conda terminal profile
 condaProfile=$(copyTerminal $defaultProfile 'Conda')

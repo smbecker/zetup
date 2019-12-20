@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apt -y install postgresql-client-common
+sudo apt install -y postgresql-client-common postgresql-client-11

@@ -5,8 +5,8 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 # Setup LFS support and hub
 sudo add-apt-repository ppa:cpick/hub -y
 sudo add-apt-repository ppa:git-core/ppa -y
-sudo apt-get update
-sudo apt-get install -y git-lfs hub
+sudo apt update
+sudo apt install -y git-lfs hub
 git lfs install
 
 # Setup difftool and mergetool

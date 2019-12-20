@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo apt-get install -y openvpn
+
+sudo apt install -y openvpn
