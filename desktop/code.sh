@@ -18,6 +18,7 @@ code-insiders --install-extension ms-vsliveshare.vsliveshare
 code-insiders --install-extension msjsdiag.debugger-for-chrome
 code-insiders --install-extension redhat.vscode-yaml
 code-insiders --install-extension shinnn.stylelint
+code-insiders --install-extension ms-vscode-remote.remote-wsl
 
 mkdir -p $HOME/.config/Code-Insiders/User/
 cp $HOME/zetup/config/code/*.json $HOME/.config/Code-Insiders/User/

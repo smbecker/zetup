@@ -9,7 +9,7 @@ sudo add-apt-repository \
 sudo apt update
 sudo apt install -y docker-ce
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
 
@@ -29,7 +29,7 @@ sudo usermod -aG docker $USER
 sudo service docker start
 
 # pull some commonly used images
-for i in postgres mysql "Microsoft/mssql-server-linux" "mcr.microsoft.com/dotnet/core/runtime-deps:3.0-alpine";
+for i in postgres mysql "Microsoft/mssql-server-linux" "mcr.microsoft.com/dotnet/core/runtime-deps:3.1-alpine";
 do
     docker pull $i
 done
