@@ -1,4 +1,4 @@
-wget -q https://installbuilder.com/installbuilder-enterprise-19.8.0-linux-installer.run -O installbuilder.run
+wget -q https://installbuilder.com/installbuilder-enterprise-20.3.0-linux-installer.run -O installbuilder.run
 chmod +x installbuilder.run
 sudo ./installbuilder.run --unattendedmodeui minimal --mode unattended --installer-language en
 rm installbuilder.run

@@ -11,9 +11,9 @@ sudo apt -yq install \
   python-dev \
   python3-dev \
   python-pip \
-  python3-pip
-
-pip3 install awscli --upgrade --user
+  python3-pip \
+  jupyter-core \
+  jupyter-notebook
 
 wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda3Installer.sh
 bash Miniconda3Installer.sh
