@@ -11,7 +11,7 @@ code-insiders --install-extension jock.svg
 code-insiders --install-extension ms-azuretools.vscode-docker
 code-insiders --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code-insiders --install-extension ms-python.python
-code-insiders --install-extension ms-vscode.csharp
+code-insiders --install-extension ms-dotnettools.csharp
 code-insiders --install-extension ms-vscode.powershell
 code-insiders --install-extension ms-vscode.vscode-typescript-tslint-plugin
 code-insiders --install-extension ms-vsliveshare.vsliveshare

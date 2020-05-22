@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget -c https://github.com/microsoft/azuredatastudio/releases/download/1.16.1/azuredatastudio-linux-1.16.1.deb -O azuredatastudio.linux.deb
+wget -c https://azuredatastudiobuilds.blob.core.windows.net/releases/1.18.0/azuredatastudio-linux-1.18.0.deb -O azuredatastudio.linux.deb
 sudo dpkg -i azuredatastudio.linux.deb
 rm azuredatastudio.linux.deb
 

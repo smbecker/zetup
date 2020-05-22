@@ -1,7 +1,7 @@
 #!/bin/bash
 
-gsettings set org.gnome.desktop.background picture-uri "https://512pixels.net/downloads/macos-wallpapers/10-14-Night.jpg"
-gsettings set org.gnome.desktop.screensaver picture-uri "https://512pixels.net/downloads/macos-wallpapers/10-14-Night.jpg"
+gsettings set org.gnome.desktop.background picture-uri "https://us-east-1.linodeobjects.com/ismh/macos-wallpapers/10-14-Night.jpg"
+gsettings set org.gnome.desktop.screensaver picture-uri "https://us-east-1.linodeobjects.com/ismh/macos-wallpapers/10-14-Night.jpg"
 gsettings set org.gnome.desktop.screensaver primary-color "#073642"
 gsettings set org.gnome.desktop.background show-desktop-icons "false"
 

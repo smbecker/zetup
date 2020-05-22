@@ -8,15 +8,13 @@ sudo apt -yq install \
   xorg-dev \
   g++ \
   cloc \
-  python-dev \
   python3-dev \
-  python-pip \
   python3-pip \
   jupyter-core \
   jupyter-notebook
 
 wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda3Installer.sh
-bash Miniconda3Installer.sh
+bash Miniconda3Installer.sh -b
 rm Miniconda3Installer.sh
 
 if [ -f $HOME/zetup/config/.conda_bashrc ];
