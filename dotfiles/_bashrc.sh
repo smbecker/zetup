@@ -9,7 +9,6 @@ export PATH=$PATH:/opt/installbuilder-20.4.0/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use 12.16.1 --silent
 
 export GOPATH=/usr/local/go
 
