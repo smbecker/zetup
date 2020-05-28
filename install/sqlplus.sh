@@ -5,7 +5,10 @@ wget -q https://download.oracle.com/otn_software/linux/instantclient/instantclie
 
 sudo mkdir -p /opt/oracle
 sudo mv instantclient-* /opt/oracle
-cd /opt/oracle
+
+pushd /opt/oracle
 
 sudo unzip instantclient-basic-linuxx64.zip
 sudo unzip instantclient-sqlplus-linuxx64.zip
+
+popd
