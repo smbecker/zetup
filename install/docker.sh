@@ -26,7 +26,7 @@ sudo usermod -aG docker $USER
 sudo service docker start
 
 # pull some commonly used images
-for i in postgres mysql "Microsoft/mssql-server-linux" "mcr.microsoft.com/dotnet/core/runtime-deps:3.1-alpine";
+for i in postgres mysql "mcr.microsoft.com/mssql/server:2019-latest";
 do
     docker pull $i
 done

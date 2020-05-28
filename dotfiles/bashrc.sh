@@ -1,6 +1,6 @@
 export DOTDIR="$HOME/zetup/dotfiles"
 export OVERRIDEDIR="$HOME/zetup/override"
-export CUSTOMDIR="$HOME/zetup/custom"
+export CUSTOMDIR="$HOME/secrets/dotfiles"
 for i in bashrc.sh aliases.sh fns.sh ;
   do
     if [ -f "$OVERRIDEDIR/$i" ] ;

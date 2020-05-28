@@ -1,10 +1,16 @@
 #!/bin bash
 
-export PATH=$PATH:/usr/sbin:$HOME/zetup/bin:$HOME/Tools/bin
-PATH=$PATH:$( find $HOME/zetup/bin/ -type d -printf ":%p" )
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
+export PATH=$PATH:/usr/sbin:$HOME/zetup/bin:$HOME/Tools/bin
 export PATH=$PATH:$HOME/.npm/bin:$HOME/.local/bin
 export PATH=$PATH:/opt/installbuilder-20.4.0/bin
+
+# Look for CUDA
+export CUDA_PATH=$(find /usr/local/ -maxdepth 1 -type d -name "cuda-*" -print | head -n 1)
+if [ "$CUDA_PATH" -ne "" && -d $CUDA_PATH ]; then
+  export PATH=$PATH:$CUDA_PATH/bin
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -49,6 +55,3 @@ exportSecrets()
 if [ -f "$HOME/secrets/secrets.yml" ]; then
   exportSecrets
 fi
-
-alias docker-stop-all-containers="docker stop \$(docker container ls -aq) && docker rm \$(docker container ls -aq)"
-alias docker-machine-unset="eval \\$(docker-machine env -u)"
