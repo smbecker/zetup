@@ -59,7 +59,7 @@ if [ ! -d $HOME/zetup ]; then
   git clone https://github.com/smbecker/zetup.git $HOME/zetup
 fi
 
-git clone "https://github.com/$username/secrets.git" $HOME/secrets
+git clone "git@github.com:$username/secrets.git" $HOME/secrets
 
 find $HOME/zetup -type f -iname "*.sh" -exec chmod +x {} \;
 
