@@ -32,16 +32,10 @@ gsettings set org.gnome.desktop.interface font-name "Garuda 11"
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "Garuda Bole 12"
 gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
 
-# Setup plank
-sudo apt install -y plank
-nohup plank &>/dev/null &
-
-mkdir -p $HOME/.config/autostart
-cp /usr/share/applications/plank.desktop $HOME/.config/autostart/
-
 sudo apt install -y uuid
 
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed "false"
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "RIGHT"
 
 getDefaultTerminal()
 {
