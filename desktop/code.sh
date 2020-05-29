@@ -20,5 +20,5 @@ code-insiders --install-extension redhat.vscode-yaml
 code-insiders --install-extension shinnn.stylelint
 code-insiders --install-extension ms-vscode-remote.remote-wsl
 
-mkdir -p $HOME/.config/Code-Insiders/User/
-cp $HOME/zetup/config/code/*.json $HOME/.config/Code-Insiders/User/
+mkdir -p $HOME/.config/'Code - Insiders'/User/
+cp $HOME/zetup/config/code/*.json $HOME/.config/'Code - Insiders'/User/

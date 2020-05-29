@@ -1,9 +1,15 @@
 #!/bin/bash
 
-gsettings set org.gnome.desktop.background picture-uri "https://us-east-1.linodeobjects.com/ismh/macos-wallpapers/10-14-Night.jpg"
-gsettings set org.gnome.desktop.screensaver picture-uri "https://us-east-1.linodeobjects.com/ismh/macos-wallpapers/10-14-Night.jpg"
+wget -c https://512pixels.net/downloads//macos-wallpapers/10-14-Night.jpg -O ~/Pictures/Background.jpg
+if [ -f ~/Pictures/Background.jpg ] ; then
+  gsettings set org.gnome.desktop.background picture-uri "$HOME/Pictures/Background.jpg"
+  gsettings set org.gnome.desktop.screensaver picture-uri "$HOME/Pictures/Background.jpg"
+fi
+
 gsettings set org.gnome.desktop.screensaver primary-color "#073642"
 gsettings set org.gnome.desktop.background show-desktop-icons "false"
+gsettings set org.gnome.shell.extensions.desktop-icons show-home "false"
+gsettings set org.gnome.shell.extensions.desktop-icons show-trash "false"
 
 cd $HOME
 
@@ -32,10 +38,19 @@ gsettings set org.gnome.desktop.interface font-name "Garuda 11"
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "Garuda Bole 12"
 gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
 
-sudo apt install -y uuid
+gsettings set org.gnome.mutter workspaces-only-on-primary "false"
+
+git clone git://github.com/spin83/multi-monitors-add-on.git
+mkdir -p ~/.local/share/gnome-shell/extensions/
+cp -r multi-monitors-add-on/multi-monitors-add-on@spin83 ~/.local/share/gnome-shell/extensions/
+rm -Rf multi-monitors-add-on
 
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed "false"
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "RIGHT"
+
+dconf load /org/gnome/desktop/wm/keybindings/ < $HOME/zetup/ui/keybindings.conf
+
+sudo apt install -y uuid
 
 getDefaultTerminal()
 {
