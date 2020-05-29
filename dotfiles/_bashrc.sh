@@ -8,9 +8,9 @@ export PATH=$PATH:/opt/installbuilder-20.4.0/bin
 
 # Look for CUDA
 export CUDA_PATH=$(find /usr/local/ -maxdepth 1 -type d -name "cuda-*" -print | head -n 1)
-if [ "$CUDA_PATH" -ne "" && -d $CUDA_PATH ]; then
-  export PATH=$PATH:$CUDA_PATH/bin
-fi
+#if [ "$CUDA_PATH" -ne "" && -d $CUDA_PATH ]; then
+#  export PATH=$PATH:$CUDA_PATH/bin
+#fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

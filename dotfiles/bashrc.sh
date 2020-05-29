@@ -1,15 +1,14 @@
 export DOTDIR="$HOME/zetup/dotfiles"
 export OVERRIDEDIR="$HOME/zetup/override"
 export CUSTOMDIR="$HOME/secrets/dotfiles"
-for i in bashrc.sh aliases.sh fns.sh ;
+for dotfile in "bashrc.sh" "aliases.sh" "fns.sh" ;
   do
-    if [ -f "$OVERRIDEDIR/$i" ] ;
-      then source "$OVERRIDEDIR/$i" ;
-      else source "$DOTDIR/_$i" ;
+    if [ -f "$OVERRIDEDIR/$dotfile" ] ;
+      then source "$OVERRIDEDIR/$dotfile" ;
+      else source "$DOTDIR/_$dotfile" ;
     fi
-    if [ -f "$CUSTOMDIR/$i" ] ; then source "$CUSTOMDIR/$i" ; fi
+    if [ -f "$CUSTOMDIR/$dotfile" ] ; then source "$CUSTOMDIR/$dotfile" ; fi
   done
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
