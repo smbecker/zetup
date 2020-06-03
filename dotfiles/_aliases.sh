@@ -4,6 +4,7 @@ alias showip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -
 alias powershell="pwsh"
 alias vscode="code-insiders"
 alias code="code-insiders"
+alias kdiff="kdiff3"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."

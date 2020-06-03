@@ -10,17 +10,22 @@ sudo apt install -y git-lfs hub
 git lfs install
 
 # Setup difftool and mergetool
-git config --global code.editor "code-insiders --wait"
+sudo apt install -y kdiff3
+
+git config --global core.editor "vi"
 git config --global push.default simple
-git config --global diff.tool vscode
 git config --global difftool.prompt "false"
-git config --global difftool.vscode.cmd 'code-insiders --wait --diff "$LOCAL" "$REMOTE"'
+git config --global difftool.keepBackup "false"
+git config --global difftool.trustExitCode "false"
+git config --global difftool.kdiff3.path 'kdiff3'
+git config --global diff.tool kdiff3
 git config --global apply.whitespace nowarn
 
-sudo apt install -y meld
-git config --global merge.tool meld
+git config --global merge.tool kdiff3
 git config --global mergetool.prompt "false"
-git config --global mergetool.meld.cmd 'meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"'
+git config --global mergetool.keepBackup "false"
+git config --global mergetool.keepTemporaries "false"
+git config --global mergetool.kdiff3.path 'kdiff3'
 
 # Setup default git aliases
 git config --global alias.ci "commit"
