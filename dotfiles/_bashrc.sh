@@ -30,28 +30,8 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
   source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
-if [[ $HOME == "$(pwd)" ]]; then cd $HOME/dev ; fi
-
-exportSecrets()
-{
-  for i in $(yq r $HOME/secrets/secrets.yml $1);
-  do
-    if [[ $(echo -e $i | tr -d '[:space:]') == *":" ]]; then
-      set -- "$1" "0"
-      i=${i:0:-1}
-      if [[ $1 == "" ]];
-        then subKey=$i;
-        else subKey=$(echo -e "$1.${i}");
-      fi
-      exportSecrets $subKey 1
-    elif [[ $2 == 1 && ! -z $i && $i != "null" ]]; then
-      envKey=$1
-      envKey=${envKey//./_}
-      export ${envKey^^}=$i
-    fi
-  done
-}
-
-if [ -f "$HOME/secrets/secrets.yml" ]; then
-  exportSecrets
+if [ -f /usr/share/bash-completion/completions/git ]; then
+  source /usr/share/bash-completion/completions/git
 fi
+
+if [[ $HOME == "$(pwd)" ]]; then cd $HOME/dev ; fi
