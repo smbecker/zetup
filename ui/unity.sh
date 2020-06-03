@@ -31,7 +31,7 @@ rm -rf $HOME/McMojave-circle
 
 gsettings set org.gnome.desktop.interface icon-theme "McMojave-circle"
 gsettings set org.gnome.desktop.interface cursor-theme "DMZ-White"
-gsettings set org.gnome.desktop.interface gtk-theme "Mojave-dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"
 
 gsettings set org.gnome.desktop.interface monospace-font-name "Meslo LG S for Powerline 13"
 gsettings set org.gnome.desktop.interface font-name "Garuda 11"
@@ -85,6 +85,7 @@ themeTerminal()
   gsettings set $terminalSetting use-theme-background "false"
   gsettings set $terminalSetting allow-bold "true"
   gsettings set $terminalSetting palette "['#6A6A78787A7A', '#E9E965653B3B', '#3939E9E9A8A8', '#E5E5B6B68484', '#4444AAAAE6E6', '#E1E175759999', '#3D3DD5D5E7E7', '#C3C3DDDDE1E1', '#595984848989', '#E6E650502929', '#0000FFFF9A9A', '#E8E894944040', '#00009A9AFBFB', '#FFFF57578F8F', '#5F5FFFFFFFFF', '#D9D9FBFBFFFF']"
+  gsettings set $terminalSetting audible-bell "false"
 }
 
 copyTerminal()
