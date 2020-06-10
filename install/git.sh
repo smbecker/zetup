@@ -12,7 +12,7 @@ git lfs install
 # Setup difftool and mergetool
 sudo apt install -y kdiff3
 
-git config --global core.editor "vi"
+git config --global core.editor "nano"
 git config --global push.default simple
 git config --global difftool.prompt "false"
 git config --global difftool.keepBackup "false"
