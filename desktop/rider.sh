@@ -7,8 +7,6 @@ mv $HOME/Tools/JetBrains\ Rider-2020.1.3/ $HOME/Tools/Rider/
 chmod -R 777 $HOME/Tools/Rider/
 ln -sf $HOME/Tools/Rider/bin/rider.sh $HOME/Tools/bin/rider
 
-sudo sh -c "echo 256 > /proc/sys/fs/inotify/max_user_instances"
-
 echo 'fs.inotify.max_user_watches = 524288' > 60-rider.conf
 sudo mv 60-rider.conf /etc/sysctl.d/
 sudo sysctl -p --system

@@ -12,3 +12,10 @@ export NVM_DIR="$HOME/.nvm"
 nvm install "12.16.3"
 
 npm i -g ts-node nodemon typescript
+
+sudo apt install watchman
+
+sudo sysctl -w fs.file-max=65535
+sudo sysctl -w fs.inotify.max_user_instances=1024
+sudo sysctl -w fs.inotify.max_user_watches=524288
+sudo sysctl -p

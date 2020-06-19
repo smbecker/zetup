@@ -33,6 +33,7 @@ gsettings set org.gnome.desktop.interface icon-theme "McMojave-circle"
 gsettings set org.gnome.desktop.interface cursor-theme "DMZ-White"
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"
 gsettings set org.gnome.desktop.interface enable-animations "false"
+gsettings set org.gnome.desktop.sound event-sounds "false"
 
 gsettings set org.gnome.desktop.interface monospace-font-name "Meslo LG S for Powerline 13"
 gsettings set org.gnome.desktop.interface font-name "Garuda 11"
