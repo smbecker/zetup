@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget -c https://dl.google.com/go/go1.14.linux-amd64.tar.gz -O - | sudo tar -xvz -C /usr/local/
+wget -c https://golang.org/dl/go1.14.4.linux-amd64.tar.gz -O - | sudo tar -xvz -C /usr/local/
 sudo ln -sf /usr/local/go/bin/go /usr/local/bin/go
 
 depInstall=$(curl https://raw.githubusercontent.com/golang/dep/master/install.sh)

@@ -6,7 +6,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt install -y docker-ce
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
 
@@ -26,10 +26,10 @@ sudo usermod -aG docker $USER
 sudo service docker start
 
 # pull some commonly used images
-for i in postgres mysql "mcr.microsoft.com/mssql/server:2019-latest";
-do
-    docker pull $i
-done
+# for i in postgres mysql "mcr.microsoft.com/mssql/server:2019-latest";
+# do
+#     docker pull $i
+# done
 
 # Automatically login if secret is available
 if [ -f "$HOME/secrets/secrets.yml" ]; then
@@ -37,6 +37,6 @@ if [ -f "$HOME/secrets/secrets.yml" ]; then
   dockerPass=$(yq r $HOME/secrets/secrets.yml docker.password)
   if [[ ! -z $dockerUser ]]; then
     docker login -u $dockerUser -p $dockerPass
-    docker pull store/oracle/database-enterprise:12.2.0.1
+#    docker pull store/oracle/database-enterprise:12.2.0.1
   fi
 fi

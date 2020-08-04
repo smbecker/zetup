@@ -126,3 +126,7 @@ condaProfile=$(copyTerminal $defaultProfile 'Conda')
 condaSetting=$(getTerminalSetting $condaProfile)
 gsettings set $condaSetting use-custom-command true
 gsettings set $condaSetting custom-command "'bash --rcfile ~/.conda_bashrc'"
+
+# Fixes occasional hangs
+# See https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1798961
+sudo apt remove -y xserver-xorg-video-intel

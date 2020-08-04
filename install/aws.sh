@@ -7,6 +7,5 @@ rm awscliv2.zip
 rm -Rf ./aws/
 
 if [ -d "$HOME/secrets/.aws" ]; then
-  mkdir -p ~/.aws
   ln -sf $HOME/secrets/.aws ~/.aws
 fi
