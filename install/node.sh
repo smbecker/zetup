@@ -9,7 +9,7 @@ sudo ln -sf $(which node) /usr/bin/node
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-nvm install "12.18.3"
+nvm install node
 
 npm i -g ts-node nodemon typescript
 

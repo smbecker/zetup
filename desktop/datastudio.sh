@@ -1,8 +1,6 @@
 #!/bin/bash
 
-wget -c https://azuredatastudio-update.azurewebsites.net/1.20.1/linux-deb-x64/stable -O azuredatastudio.linux.deb
-sudo dpkg -i azuredatastudio.linux.deb
-rm azuredatastudio.linux.deb
+sudo snap install azuredatastudio --classic
 
 azuredatastudio --install-extension Microsoft.azuredatastudio-postgresql
 azuredatastudio --install-extension Microsoft.profiler
