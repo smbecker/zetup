@@ -6,4 +6,4 @@ rm packages-microsoft-prod.deb
 
 sudo add-apt-repository universe
 sudo apt update
-sudo apt install -y apt-transport-https dotnet-sdk-3.1
+sudo apt install -y wine apt-transport-https dotnet-sdk-3.1
