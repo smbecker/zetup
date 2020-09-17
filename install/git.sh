@@ -2,11 +2,12 @@
 
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
-# Setup LFS support and hub
-sudo add-apt-repository ppa:cpick/hub -y
+# Setup LFS support and GitHub CLI
 sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
-sudo apt install -y git-lfs hub
+sudo apt install -y git-lfs gh
 git lfs install
 
 # Setup difftool and mergetool
