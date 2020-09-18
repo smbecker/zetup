@@ -52,6 +52,10 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "RIGHT"
 
 dconf load /org/gnome/desktop/wm/keybindings/ < $HOME/zetup/ui/keybindings.conf
 
+sudo apt-add-repository ppa:yktooo/ppa
+sudo apt update
+sudo apt install -y indicator-sound-switcher
+
 sudo apt install -y uuid
 
 getDefaultTerminal()
