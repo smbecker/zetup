@@ -11,22 +11,23 @@ sudo apt install -y git-lfs gh
 git lfs install
 
 # Setup difftool and mergetool
-sudo apt install -y kdiff3
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update
+sudo apt install -y sublime-merge
 
 git config --global core.editor "nano"
 git config --global push.default simple
 git config --global difftool.prompt "false"
 git config --global difftool.keepBackup "false"
 git config --global difftool.trustExitCode "false"
-git config --global difftool.kdiff3.path 'kdiff3'
-git config --global diff.tool kdiff3
 git config --global apply.whitespace nowarn
 
-git config --global merge.tool kdiff3
+git config --global mergetool.smerge.cmd 'smerge mergetool "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"'
+git config --global merge.tool smerge
 git config --global mergetool.prompt "false"
 git config --global mergetool.keepBackup "false"
 git config --global mergetool.keepTemporaries "false"
-git config --global mergetool.kdiff3.path 'kdiff3'
 
 # Setup default git aliases
 git config --global alias.ci "commit"

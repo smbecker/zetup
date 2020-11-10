@@ -17,5 +17,5 @@ sudo apt install watchman
 
 sudo sysctl -w fs.file-max=65535
 sudo sysctl -w fs.inotify.max_user_instances=1024
-sudo sysctl -w fs.inotify.max_user_watches=524288
+sudo sysctl -w fs.inotify.max_user_watches=1048576
 sudo sysctl -p
