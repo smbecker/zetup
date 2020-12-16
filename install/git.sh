@@ -18,9 +18,8 @@ sudo apt install -y sublime-merge
 
 git config --global core.editor "nano"
 git config --global push.default simple
-git config --global difftool.prompt "false"
-git config --global difftool.keepBackup "false"
-git config --global difftool.trustExitCode "false"
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd 'code-insiders --wait --diff "$LOCAL" "$REMOTE"'
 git config --global apply.whitespace nowarn
 
 git config --global mergetool.smerge.cmd 'smerge mergetool "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"'
