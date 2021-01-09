@@ -1,12 +1,13 @@
 #!/bin/bash
 
-wget -q https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
+wget -q https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+chmod +x dotnet-install.sh
 
-sudo add-apt-repository universe
-sudo apt update
-sudo apt install -y wine apt-transport-https dotnet-sdk-3.1
+sudo ./dotnet-install.sh --channel 3.1 --install-dir /usr/share/dotnet
+sudo ./dotnet-install.sh --channel 5.0 --install-dir /usr/share/dotnet
+sudo ln -sf /usr/share/dotnet/dotnet /usr/bin/dotnet
+
+rm ./dotnet-install.sh
 
 dotnet tool install --global dotnet-trace
 dotnet tool install --global dotnet-counters

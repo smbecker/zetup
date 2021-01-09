@@ -23,3 +23,5 @@ EOL
 
 sudo mv 10-inotify.conf /etc/sysctl.d/10-inotify.conf
 sudo sysctl -p
+
+sudo ln -sf $(which google-chrome) /usr/local/bin/chrome
