@@ -54,7 +54,7 @@ gnome-extensions disable ubuntu-dock@ubuntu.com
 dconf load /org/gnome/desktop/wm/keybindings/ < $HOME/zetup/ui/window-keybindings.conf
 dconf load /org/gnome/settings-daemon/plugins/media-keys/ < $HOME/zetup/ui/launcher-keybindings.conf
 
-sudo apt-add-repository ppa:yktooo/ppa
+sudo apt-add-repository -y ppa:yktooo/ppa
 sudo apt update
 sudo apt install -y indicator-sound-switcher
 

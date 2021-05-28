@@ -2,10 +2,13 @@
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
+export GEM_HOME=$HOME/.ruby/
+
 export PATH=$PATH:/usr/sbin:$HOME/zetup/bin:$HOME/Tools/bin
 export PATH=$PATH:$HOME/.npm/bin:$HOME/.local/bin
 export PATH=$PATH:/opt/installbuilder-20.4.0/bin
 export PATH=$PATH:$HOME/.dotnet/tools
+export PATH=$PATH:$GEM_HOME/bin
 
 # Look for CUDA
 export CUDA_PATH=$(find /usr/local/ -maxdepth 1 -type d -name "cuda-*" -print | tail -n 1)

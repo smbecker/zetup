@@ -6,7 +6,8 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt update
 sudo apt install -y kubectl
 
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-chmod +x minikube
-sudo mv minikube /usr/local/bin
+mkdir -p $HOME/Tools/bin
+curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.11.0/kind-$(uname)-amd64"
+chmod +x ./kind
+mv ./kind $HOME/Tools/bin/
 

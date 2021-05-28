@@ -3,9 +3,9 @@
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # Setup LFS support and GitHub CLI
-sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-add-repository -y ppa:git-core/ppa
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
+sudo apt-add-repository -y https://cli.github.com/packages
 sudo apt update
 sudo apt install -y git-lfs gh
 git lfs install

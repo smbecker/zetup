@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p $HOME/Tools/bin
-wget -c https://snapshots.mitmproxy.org/5.1.1/mitmproxy-5.1.1-linux.tar.gz -O - | tar -xz -C $HOME/Tools/bin
+wget -c https://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz -O - | tar -xz -C $HOME/Tools/bin
 
 if ! [ -d "$HOME/.mitmproxy" ] ; then
   echo "Launching mitmweb in order to generate certificates"

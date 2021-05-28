@@ -3,9 +3,13 @@
 mkdir -p $HOME/Tools/ILSpy
 mkdir -p $HOME/Tools/bin
 
-wget -c https://ci.appveyor.com/api/projects/icsharpcode/avaloniailspy/artifacts/artifacts%2Fzips%2FILSpy-linux-x64-Release.zip?branch=master -O ilspy.zip
+rm -rf $HOME/Tools/ILSpy/*
+
+wget -c https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.0-rc1/linux-x64.zip -O ilspy.zip
 unzip ilspy.zip -d $HOME/Tools/ILSpy
 rm ilspy.zip
+rm -rf $HOME/Tools/ILSpy/__MACOSX
 
-chmod a+x $HOME/Tools/ILSpy/ILSpy
-ln -s $HOME/Tools/ILSpy/ILSpy $HOME/Tools/bin/ILSpy
+chmod a+x $HOME/Tools/ILSpy/linux-x64/ILSpy
+rm -f $HOME/Tools/bin/ILSpy
+ln -s $HOME/Tools/ILSpy/linux-x64/ILSpy $HOME/Tools/bin/ILSpy
