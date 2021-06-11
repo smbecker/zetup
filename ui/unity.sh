@@ -50,6 +50,7 @@ rm -Rf multi-monitors-add-on
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed "false"
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "RIGHT"
 gnome-extensions disable ubuntu-dock@ubuntu.com
+gnome-extensions disable ding@rastersoft.com
 
 dconf load /org/gnome/desktop/wm/keybindings/ < $HOME/zetup/ui/window-keybindings.conf
 dconf load /org/gnome/settings-daemon/plugins/media-keys/ < $HOME/zetup/ui/launcher-keybindings.conf
