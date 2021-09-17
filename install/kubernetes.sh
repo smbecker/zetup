@@ -7,7 +7,11 @@ sudo apt update
 sudo apt install -y kubectl
 
 mkdir -p $HOME/Tools/bin
-curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.11.0/kind-$(uname)-amd64"
+curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.11.1/kind-$(uname)-amd64"
 chmod +x ./kind
 mv ./kind $HOME/Tools/bin/
 
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+chmod 700 get_helm.sh
+sudo ./get_helm.sh
+rm get_helm.sh

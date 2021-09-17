@@ -37,3 +37,4 @@ git config --global alias.pr "pull --rebase"
 git config --global alias.graph "log --all --graph --decorate --oneline -n30"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 git config --global 'alias.last-commit' "diff-tree --no-commit-id --name-only -r HEAD"
+git config --global init.defaultBranch main

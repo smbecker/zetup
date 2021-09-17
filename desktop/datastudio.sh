@@ -2,7 +2,7 @@
 
 sudo apt install -y libunwind8
 
-wget -c https://sqlopsbuilds.azureedge.net/stable/0f5cfdc2c8c2433028842e16dc5ac1a65da24292/azuredatastudio-linux-1.29.0.deb -O azuredatastudio.linux.deb
+wget -c https://sqlopsbuilds.azureedge.net/stable/4a45ba7cf20dd4129f1a08e5e776dfb33e3d1d1e/azuredatastudio-linux-1.32.0.deb -O azuredatastudio.linux.deb
 sudo dpkg -i azuredatastudio.linux.deb
 rm azuredatastudio.linux.deb
 

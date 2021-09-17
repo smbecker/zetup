@@ -20,6 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 export GOPATH=/usr/local/go
 
 alias chrome="google-chrome-stable"
+alias bat="batcat"
 alias "ls=ls --color=auto -l -G"
 
 if [ -f "$HOME/Tools/bin/z.sh" ]; then

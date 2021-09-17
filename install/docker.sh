@@ -40,3 +40,8 @@ if [ -f "$HOME/secrets/secrets.yml" ]; then
 #    docker pull store/oracle/database-enterprise:12.2.0.1
   fi
 fi
+
+# Install dive for working with Docker images
+wget https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_amd64.deb
+sudo apt install ./dive_0.9.2_linux_amd64.deb
+rm ./dive_0.9.2_linux_amd64.deb
