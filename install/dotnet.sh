@@ -5,6 +5,7 @@ chmod +x dotnet-install.sh
 
 sudo ./dotnet-install.sh --channel 3.1 --install-dir /usr/share/dotnet
 sudo ./dotnet-install.sh --channel 5.0 --install-dir /usr/share/dotnet
+sudo ./dotnet-install.sh --channel 6.0 --install-dir /usr/share/dotnet
 sudo ln -sf /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 rm ./dotnet-install.sh
