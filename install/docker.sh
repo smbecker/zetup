@@ -45,3 +45,23 @@ fi
 wget https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_amd64.deb
 sudo apt install ./dive_0.9.2_linux_amd64.deb
 rm ./dive_0.9.2_linux_amd64.deb
+
+# Install nvidia-container-runtime
+if [ "$(lspci | grep -i "VGA compatible controller: NVIDIA")" != "" ]; then
+  curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | sudo apt-key add -
+  curl -s -L https://nvidia.github.io/nvidia-container-runtime/ubuntu20.04/nvidia-container-runtime.list | sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+  sudo apt update
+  sudo apt install -y nvidia-container-runtime
+  sudo tee /etc/docker/daemon.json <<EOF
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "/usr/bin/nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
+EOF
+  sudo systemctl daemon-reload
+  sudo systemctl restart docker
+fi
