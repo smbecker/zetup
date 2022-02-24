@@ -15,3 +15,8 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scr
 chmod 700 get_helm.sh
 sudo ./get_helm.sh
 rm get_helm.sh
+
+git clone https://github.com/lee0c/kubectl-watch.git
+cp ./kubectl-watch/kubectl-watch $HOME/Tools/bin
+rm -rf ./kubectl-watch
+sudo ln -s $HOME/Tools/bin/kubectl-watch /usr/local/bin/kubectl-watch
