@@ -1,39 +1,25 @@
 #!/bin/bash
 
-wget -c https://512pixels.net/downloads//macos-wallpapers/10-14-Night.jpg -O ~/Pictures/Background.jpg
-if [ -f ~/Pictures/Background.jpg ] ; then
-  gsettings set org.gnome.desktop.background picture-uri "$HOME/Pictures/Background.jpg"
-  gsettings set org.gnome.desktop.screensaver picture-uri "$HOME/Pictures/Background.jpg"
-fi
-
-gsettings set org.gnome.desktop.screensaver primary-color "#073642"
+gsettings set org.gnome.desktop.screensaver primary-color "#000000"
+gsettings set org.gnome.desktop.screensaver secondary-color "#000000"
 gsettings set org.gnome.desktop.background show-desktop-icons "false"
 gsettings set org.gnome.shell.extensions.desktop-icons show-home "false"
 gsettings set org.gnome.shell.extensions.desktop-icons show-trash "false"
 
-cd $HOME
-
-git clone https://github.com/vinceliuice/Mojave-gtk-theme.git
-git clone https://github.com/vinceliuice/McMojave-circle.git
-
-cd $HOME/Mojave-gtk-theme
-chmod +x install.sh
-./install.sh
-
-cd $HOME/McMojave-circle
-rm -rf $HOME/Mojave-gtk-theme
-
-chmod +x install.sh
-./install.sh
-
-cd $HOME
-rm -rf $HOME/McMojave-circle
-
-gsettings set org.gnome.desktop.interface icon-theme "McMojave-circle"
-gsettings set org.gnome.desktop.interface cursor-theme "DMZ-White"
-gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"
+gsettings set org.gnome.desktop.interface icon-theme "Yaru-prussiangreen"
+gsettings set org.gnome.desktop.interface cursor-theme "Yaru"
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru-prussiangreen-dark"
 gsettings set org.gnome.desktop.interface enable-animations "false"
 gsettings set org.gnome.desktop.sound event-sounds "false"
+
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.shell.ubuntu color-scheme 'prefer-dark'
+
+gsettings set org.gnome.desktop.background picture-uri-dark 'file:///usr/share/backgrounds/Optical_Fibers_in_Dark_by_Elena_Stravoravdi.jpg'
+gsettings set org.gnome.desktop.background color-shading-type 'solid'
+gsettings set org.gnome.desktop.background picture-options 'zoom'
+gsettings set org.gnome.desktop.screensaver color-shading-type 'solid'
+gsettings set org.gnome.desktop.screensaver picture-options 'zoom'
 
 gsettings set org.gnome.desktop.interface monospace-font-name "Meslo LG S for Powerline 13"
 gsettings set org.gnome.desktop.interface font-name "Garuda 11"
@@ -54,10 +40,6 @@ gnome-extensions disable ding@rastersoft.com
 
 dconf load /org/gnome/desktop/wm/keybindings/ < $HOME/zetup/ui/window-keybindings.conf
 dconf load /org/gnome/settings-daemon/plugins/media-keys/ < $HOME/zetup/ui/launcher-keybindings.conf
-
-sudo apt-add-repository -y ppa:yktooo/ppa
-sudo apt update
-sudo apt install -y indicator-sound-switcher
 
 sudo apt install -y uuid
 
@@ -86,14 +68,17 @@ themeTerminal()
   dconf write /org/gnome/terminal/legacy/new-terminal-mode "'tab'"
 
   gsettings set $terminalSetting visible-name $2
-  gsettings set $terminalSetting background-color "#073642"
-  gsettings set $terminalSetting foreground-color "#FDF6E3"
-  gsettings set $terminalSetting bold-color "#FDF6E3"
+  gsettings set $terminalSetting background-color "#1d1d1f1f2121"
+  gsettings set $terminalSetting foreground-color "#b8b8dbdbefef"
+  gsettings set $terminalSetting cursor-background-color "#b8b8dbdbefef"
+  gsettings set $terminalSetting cursor-foreground-color "#1d1d1f1f2121"
+  gsettings set $terminalSetting bold-color "#b8b8dbdbefef"
   gsettings set $terminalSetting bold-color-same-as-fg "true"
   gsettings set $terminalSetting use-theme-colors "false"
   gsettings set $terminalSetting use-theme-background "false"
   gsettings set $terminalSetting allow-bold "true"
-  gsettings set $terminalSetting palette "['#6A6A78787A7A', '#E9E965653B3B', '#3939E9E9A8A8', '#E5E5B6B68484', '#4444AAAAE6E6', '#E1E175759999', '#3D3DD5D5E7E7', '#C3C3DDDDE1E1', '#595984848989', '#E6E650502929', '#0000FFFF9A9A', '#E8E894944040', '#00009A9AFBFB', '#FFFF57578F8F', '#5F5FFFFFFFFF', '#D9D9FBFBFFFF']"
+  gsettings set $terminalSetting encoding "UTF-8"
+  gsettings set $terminalSetting palette "['#1d1d1d1d1919', '#f1f183833939', '#9f9fd3d36464', '#f4f4efef6d6d', '#50509696bebe', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff', '#1d1d1d1d1919', '#d2d22a2a2424', '#a7a7d4d42c2c', '#ffff89894949', '#6161b9b9d0d0', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff']"
   gsettings set $terminalSetting audible-bell "false"
 }
 
