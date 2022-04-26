@@ -2,13 +2,16 @@
 
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
-# Setup LFS support and GitHub CLI
-sudo apt-add-repository -y ppa:git-core/ppa
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository -y https://cli.github.com/packages
-sudo apt update
-sudo apt install -y git-lfs gh
+# Setup LFS support
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt install -y git-lfs
 git lfs install
+
+# Setup GitHub CLI
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install -y gh
 
 # Setup difftool and mergetool
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
