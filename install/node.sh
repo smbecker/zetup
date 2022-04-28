@@ -9,6 +9,7 @@ sudo ln -sf $(which npm) /usr/bin/npm
 sudo ln -sf $(which node) /usr/bin/node
 
 corepack enable
+yarn set version berry
 
 sudo apt install watchman
 
