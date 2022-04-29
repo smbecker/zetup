@@ -8,7 +8,7 @@ sudo apt install -y kubectl
 
 # Install kind
 mkdir -p $HOME/Tools/bin
-curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.12.1/kind-$(uname)-amd64"
+curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.12.0/kind-$(uname)-amd64"
 chmod +x ./kind
 mv ./kind $HOME/Tools/bin/
 
