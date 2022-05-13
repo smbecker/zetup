@@ -17,7 +17,7 @@ if [ "$CUDA_PATH" != "" ] && [ -d "$CUDA_PATH" ] ; then
 fi
 
 export NVM_DIR="$HOME/.nvm"
-export GOPATH=/usr/local/go
+export GOPATH="$HOME/.go"
 
 alias chrome="google-chrome-stable"
 alias bat="batcat"
