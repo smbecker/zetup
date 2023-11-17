@@ -78,7 +78,7 @@ themeTerminal()
   gsettings set $terminalSetting use-theme-background "false"
   gsettings set $terminalSetting allow-bold "true"
   gsettings set $terminalSetting encoding "UTF-8"
-  gsettings set $terminalSetting palette "['#1d1d1d1d1919', '#f1f183833939', '#9f9fd3d36464', '#f4f4efef6d6d', '#50509696bebe', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff', '#1d1d1d1d1919', '#d2d22a2a2424', '#a7a7d4d42c2c', '#ffff89894949', '#6161b9b9d0d0', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff']"
+  gsettings set $terminalSetting palette "['#1d1d1d1d1919', '#f1f183833939', '#9f9fd3d36464', '#f4f4efef6d6d', '#50509696bebe', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff', '#50509696bebe', '#d2d22a2a2424', '#a7a7d4d42c2c', '#ffff89894949', '#6161b9b9d0d0', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff']"
   gsettings set $terminalSetting audible-bell "false"
 }
 

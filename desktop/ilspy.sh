@@ -5,7 +5,7 @@ mkdir -p $HOME/Tools/bin
 
 rm -rf $HOME/Tools/ILSpy/*
 
-wget -c https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.1-rc/Linux.x64.Release.zip -O ilspy.zip
+wget -c https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.2-rc/Linux.x64.Release.zip -O ilspy.zip
 unzip ilspy.zip -d $HOME/Tools/ILSpy
 rm ilspy.zip
 rm -rf $HOME/Tools/ILSpy/__MACOSX
