@@ -16,7 +16,7 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm use default > /dev/null
 
-export JAVA_HOME=/usr/lib/jvm/jdk-19
+export JAVA_HOME=/usr/lib/jvm/default-java
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/gradle/gradle-8.0.2/bin:$PATH"
