@@ -23,6 +23,7 @@ code-insiders --install-extension jock.svg
 code-insiders --install-extension ms-vscode.vscode-typescript-tslint-plugin
 code-insiders --install-extension redhat.vscode-yaml
 code-insiders --install-extension anweber.vscode-httpyac
+code-insiders --install-extension ilspy-vscode
 
 mkdir -p $HOME/.config/'Code - Insiders'/User/
 cp $HOME/zetup/config/code/*.json $HOME/.config/'Code - Insiders'/User/

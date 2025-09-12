@@ -30,6 +30,6 @@ if [ "$(lspci | grep -i nvidia)" != "" ]; then
   sudo systemctl restart containerd
 fi
 
-wget https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb -O k9s.linux.deb
+wget https://github.com/derailed/k9s/releases/download/v0.50.5/k9s_linux_amd64.deb -O k9s.linux.deb
 sudo dpkg -i k9s.linux.deb
 rm k9s.linux.deb
