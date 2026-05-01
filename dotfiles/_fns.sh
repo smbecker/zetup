@@ -1,5 +1,19 @@
 #!/bin bash
 
+k3d_create()
+{
+  clusterName=$1
+  shift 1
+  k3d cluster rm $clusterName 2>/dev/null || true && \
+  k3d cluster create $clusterName -s 1 -a 0 --no-lb \
+    -s 1 \
+    -a 0 \
+    --no-lb \
+    --k3s-arg '--disable=traefik@server:*' \
+    --k3s-arg '--disable=servicelb@server:*' \
+    --wait
+}
+
 upgrade_all()
 {
   sudo apt update

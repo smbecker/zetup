@@ -11,3 +11,7 @@ alias ....="cd ../../.."
 alias ~="cd ~/dev"
 alias docker-stop-all-containers="docker stop \$(docker container ls -aq) && docker rm \$(docker container ls -aq)"
 #alias docker-machine-unset="eval \\$(docker-machine env -u)"
+
+alias z='zmx'
+alias zd='zmx detach'
+alias za='zmx attach $(basename $(pwd))'
